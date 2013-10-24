@@ -1,0 +1,10 @@
+edu.ucsc.gameAI.decisionTrees
+edu.ucsc.gameAI.decisionTrees.binary
+pacman
+pacman.controllers
+pacman.controllers.examples
+pacman.entries.ghosts
+pacman.entries.pacman
+pacman.game
+pacman.game.internal
+pacman.game.util
