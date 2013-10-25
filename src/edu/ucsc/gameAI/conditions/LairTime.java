@@ -18,7 +18,7 @@ public class LairTime implements ICondition {
 	@Override
 	public boolean test(Game game) {
 		int time = game.getGhostLairTime(gghost);
-		return time >= gmin && time >= gmax;
+		return time >= gmin && time <= gmax;
 	}
 
 }
