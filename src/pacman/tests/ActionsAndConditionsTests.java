@@ -124,7 +124,7 @@ public class ActionsAndConditionsTests {
 			if ((new LairTime(ghost, game.getGhostLairTime(ghost)-1,game.getGhostLairTime(ghost)+1)).test(game))
 				++passed;//SayOnce("CurrentLevelTime passed");
 			else
-				SayOnce("GhostEaten failed");
+				SayOnce("LairTime failed");
 			++tests;
 			if ((new GhostLastMove(ghost, game.getGhostLastMoveMade(ghost))).test(game))
 				++passed;//SayOnce("CurrentLevelTime passed");
