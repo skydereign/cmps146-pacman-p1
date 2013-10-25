@@ -12,6 +12,6 @@ public class IsPowerPillStillAvailable implements ICondition {
 	
 	@Override
 	public boolean test(Game game) {
-		return game.isPillStillAvailable(gpillindex);
+		return game.isPowerPillStillAvailable(gpillindex);
 	}
 }
