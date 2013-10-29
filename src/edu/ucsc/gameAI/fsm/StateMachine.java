@@ -12,6 +12,28 @@ public class StateMachine implements IStateMachine{
 	@Override
 	public Collection<IAction> update(Game game) {
 		// TODO Auto-generated method stub
+				boolean transitionTriggered = false;
+		LinkedList<IAction> actionCollection = new LinkedList<IAction>();
+
+		for(ITransition trans : currentState.getTransitions()){
+			if(trans.isTriggered(game)){
+				transitionTriggered = true;
+				if(currentState.getExitAction() != null){
+					actionCollection.add(currentState.getExitAction());
+				}
+				if(trans.getAction() != null){
+					actionCollection.add(trans.getAction());
+				}
+				currentState = trans.getTargetState();
+				if(currentState.getEntryAction() != null){
+					actionCollection.add(currentState.getEntryAction());
+				}
+				break;
+			}
+		}
+		if(!transitionTriggered){
+			actionCollection.add(currentState.getAction());
+		}
 		return actionCollection;
 	}
 
