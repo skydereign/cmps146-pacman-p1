@@ -24,7 +24,6 @@ import pacman.controllers.examples.RandomPacMan;
 import pacman.controllers.examples.StarterGhosts;
 import pacman.controllers.examples.StarterPacMan;
 import pacman.entries.ghosts.*;
-import pacman.entries.pacman.*;
 import pacman.game.Game;
 import pacman.game.GameView;
 import static pacman.game.Constants.*;
@@ -60,7 +59,7 @@ public class Executor
 
 		
 		//run multiple games in batch mode - good for testing.
-		int numTrials=10000;
+		int numTrials=2000;
 		//exec.runExperiment(new StarterPacMan(),new Legacy2TheReckoning(),numTrials);
 		 
 		
@@ -76,16 +75,17 @@ public class Executor
 		boolean visual=true;
 		
 		// run unit tests during execution
-		boolean bRunUnitTests=true;
+		boolean bRunUnitTests=false;
 		
 		
-		exec.runGameTimed(new StarterPacMan(),new Legacy2TheReckoning(),visual,bRunUnitTests);
+		//exec.runGameTimed(new StarterPacMan(),new Legacy2TheReckoning(),visual,bRunUnitTests);
 		
 		// mypacman testing
 		//exec.runGameTimed(new MyPacMan(),new Legacy2TheReckoning(),visual,bRunUnitTests);
 
 		// myghost testing
 		//exec.runGameTimed(new StarterPacMan(),new MyGhosts(),visual,bRunUnitTests);
+		exec.runExperiment(new StarterPacMan(),new MyGhosts(),numTrials);
 		
 		// for playing pacman with keyboard
 		//exec.runGameTimed(new HumanController(new KeyBoardInput()),new Legacy2TheReckoning(),visual,bRunUnitTests);

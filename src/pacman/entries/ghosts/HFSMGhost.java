@@ -9,9 +9,6 @@ import edu.ucsc.gameAI.GoUpAction;
 import edu.ucsc.gameAI.IAction;
 import edu.ucsc.gameAI.NeutralAction;
 import edu.ucsc.gameAI.conditions.PacmanLastMove;
-import edu.ucsc.gameAI.hfsm.HFSM;
-import edu.ucsc.gameAI.hfsm.HState;
-import edu.ucsc.gameAI.hfsm.HTransition;
 import edu.ucsc.gameAI.hfsm.IHFSM;
 import edu.ucsc.gameAI.hfsm.IHState;
 import edu.ucsc.gameAI.hfsm.IHTransition;
@@ -61,6 +58,7 @@ public class HFSMGhost extends Controller<EnumMap<GHOST,MOVE>> {
 	}
 	
 	private IHFSM createHFSM() {
+		/*
 		IHFSM hfsm = new HFSM("LR");
 		IHFSM upIsUp = new HFSM("UU");
 		IHFSM upIsDown = new HFSM("UD");
@@ -132,6 +130,7 @@ public class HFSMGhost extends Controller<EnumMap<GHOST,MOVE>> {
 		upIsDown.setStates(statesUpIsDown);
 		upIsDown.setInitialState(neutralUD);
 		
-		return hfsm;
+		return hfsm; */
+		return null;
 	}
 }
