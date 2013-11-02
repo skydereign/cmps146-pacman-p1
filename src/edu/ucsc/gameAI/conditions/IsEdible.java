@@ -6,7 +6,7 @@ import pacman.game.Game;
 
 public class IsEdible implements ICondition {
 	GHOST gghost;
-	public IsEdible(GHOST ghost)
+	public IsEdible(Game game, GHOST ghost)
 	{
 		gghost=ghost;
 	}

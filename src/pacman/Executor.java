@@ -24,6 +24,7 @@ import pacman.controllers.examples.RandomPacMan;
 import pacman.controllers.examples.StarterGhosts;
 import pacman.controllers.examples.StarterPacMan;
 import pacman.entries.ghosts.*;
+import pacman.entries.pacman.*;
 import pacman.game.Game;
 import pacman.game.GameView;
 import static pacman.game.Constants.*;
@@ -44,7 +45,7 @@ public class Executor
 	boolean runActionsAndConditionsTests = true;
 	boolean runDecisionTreeTests = true;
 	boolean runFSMTests = true;
-	boolean runHFSMTests = true;
+	boolean runHFSMTests = false;
 	
 	final private int TEST_DURATION = 600; 
 	
@@ -59,9 +60,9 @@ public class Executor
 
 		
 		//run multiple games in batch mode - good for testing.
-		int numTrials=2000;
+		int numTrials=10000;
 		//exec.runExperiment(new StarterPacMan(),new Legacy2TheReckoning(),numTrials);
-		 
+		exec.runExperiment(new MyPacMan(),new Legacy2TheReckoning(),numTrials);
 		
 		/*
 		//run a game in synchronous mode: game waits until controllers respond.
@@ -80,15 +81,14 @@ public class Executor
 		
 		//exec.runGameTimed(new StarterPacMan(),new Legacy2TheReckoning(),visual,bRunUnitTests);
 		
-		// mypacman testing
+		//mypacman testing
 		//exec.runGameTimed(new MyPacMan(),new Legacy2TheReckoning(),visual,bRunUnitTests);
 
 		// myghost testing
 		//exec.runGameTimed(new StarterPacMan(),new MyGhosts(),visual,bRunUnitTests);
-		exec.runExperiment(new StarterPacMan(),new MyGhosts(),numTrials);
 		
 		// for playing pacman with keyboard
-		//exec.runGameTimed(new HumanController(new KeyBoardInput()),new Legacy2TheReckoning(),visual,bRunUnitTests);
+		//exec.runGameTimed(new HumanController(new KeyBoardInput()),new Legacy2TheReckoning(),visual,false);
 
 		/*
 		//run the game in asynchronous mode but advance as soon as both controllers are ready  - this is the mode of the competition.

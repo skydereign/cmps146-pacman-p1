@@ -2,17 +2,17 @@ package edu.ucsc.gameAI.fsm;
 
 import java.util.Collection;
 import java.util.LinkedList;
+
 import pacman.game.Game;
 import edu.ucsc.gameAI.IAction;
 
 public class StateMachine implements IStateMachine{
 
 	IState currentState;
-	Collection<IAction> actionCollection;
 	@Override
 	public Collection<IAction> update(Game game) {
 		// TODO Auto-generated method stub
-		 boolean transitionTriggered = false;
+		boolean transitionTriggered = false;
 		LinkedList<IAction> actionCollection = new LinkedList<IAction>();
 
 		for(ITransition trans : currentState.getTransitions()){

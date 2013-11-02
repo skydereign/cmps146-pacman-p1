@@ -51,7 +51,7 @@ public class HFSMTests {
 	
 	public HFSMTests()
 	{
-		/*
+		
 		//create hfsm
 		hfsm = new HFSM();
 		upIsUp = new HFSM();
@@ -125,7 +125,7 @@ public class HFSMTests {
 		
 		// for testing hfsm
 		bLeftState = true;
-		*/
+		
 	}
 	public float test(Game game){
 		int tests = 0;
